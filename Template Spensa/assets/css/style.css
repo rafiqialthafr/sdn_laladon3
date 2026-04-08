@@ -1,0 +1,21 @@
+/* Custom CSS for School Website */
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Hero Section Overlay */
+.hero-overlay {
+    background: linear-gradient(rgba(0, 51, 102, 0.7), rgba(0, 51, 102, 0.7));
+}
+
+/* Hover effects for cards */
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}

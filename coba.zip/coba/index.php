@@ -8,116 +8,57 @@ $query = mysqli_query($koneksi, "SELECT * FROM guru ORDER BY nama ASC");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SD Negeri Laladon 3</title>
-    
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; }
-        
         /* Membuat background bulat pada panah agar terlihat seperti tombol */
-        .carousel-control-prev-icon,
-        .carousel-control-next-icon {
-            background-color: transparent; /* Transparan */
-            background-size: 50% 50%;
-            border-radius: 50%; /* Membuat jadi bulat */
-            border: 2px solid white; /* Tambahan border agar terlihat */
-            width: 50px;
-            height: 50px;
-            cursor: pointer;
-            pointer-events: auto;
-            transition: all 0.3s ease;
-        }
-        /* Container tombol panah */
-        .carousel-control-prev,
-        .carousel-control-next {
-            position: absolute;
-            top: 50%; /* Vertical center */
-            bottom: auto; /* Reset bottom */
-            width: 50px; /* Batasi lebar area klik */
-            height: 50px; /* Batasi tinggi area klik */
-            transform: translateY(-50%);
-            background: none;
-            opacity: 1;
-            pointer-events: auto; /* Aktifkan klik pada tombol */
-        }
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: transparent; /* Transparan */
+    background-size: 50% 50%;
+    border-radius: 50%; /* Membuat jadi bulat */
+    border: 2px solid white; /* Tambahan border agar terlihat */
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    pointer-events: auto;
+    transition: all 0.3s ease;
+}
+
+/* Container tombol panah */
+.carousel-control-prev,
+.carousel-control-next {
+    position: absolute;
+    top: 50%; /* Vertical center */
+    bottom: auto; /* Reset bottom */
+    width: 50px; /* Batasi lebar area klik */
+    height: 50px; /* Batasi tinggi area klik */
+    transform: translateY(-50%);
+    background: none;
+    opacity: 1;
+    pointer-events: auto; /* Aktifkan klik pada tombol */
+}
 
 /* Posisi kedua tombol di kanan dan ditumpuk vertikal */
-        .carousel-control-next { 
-            right: 20px; 
-            top: calc(50% + 30px); /* Geser ke bawah 30px dari tengah */
-        }
-        .carousel-control-prev { 
-            left: auto; /* Reset left default */
-            right: 20px; /* Posisi sama rata di kanan */
-            top: calc(50% - 30px); /* Geser ke atas 30px dari tengah */
-        }
+.carousel-control-next { 
+    right: 20px; 
+    top: calc(50% + 30px); /* Geser ke bawah 30px dari tengah */
+}
+.carousel-control-prev { 
+    left: auto; /* Reset left default */
+    right: 20px; /* Posisi sama rata di kanan */
+    top: calc(50% - 30px); /* Geser ke atas 30px dari tengah */
+}
 
-        /* Efek saat kursor diarahkan ke tombol panah */
-        .carousel-control-prev:hover .carousel-control-prev-icon,
-        .carousel-control-next:hover .carousel-control-next-icon {
-            background-color: #facc15; /* Kuning cerah (yellow-400) */
-            border-color: #facc15;
-        }
-        /* 1. Sembunyikan checkbox-nya */
-    #klik-logo,#klik-logo2,#klik-logo3,#klik-logo4 {
-        display: none;
-    }
-
-    /* 2. Gaya untuk logo awal */
-    .logo-kecil,.logo-kecil2,.logo-kecil3,.logo-kecil4 {
-        width: 150px;
-        cursor: pointer;
-        transition: 0.3s;
-    }
-
-    /* 3. Gaya Wadah Pop-up (Overlay) */
-    .overlay,.overlay2,.overlay3,.overlay4 {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: auto;
-        min-height: unset;
-        background: rgba(0, 0, 0, 0.8);
-        display: none; /* Sembunyi dulu */
-        justify-content: center;
-        align-items: center;
-        z-index: 999;
-    }
-
-    /* 4. Tampilkan Pop-up saat Checkbox dicentang */
-    #klik-logo:checked ~ .overlay {
-        display: flex !important;
-    }
-    #klik-logo2:checked ~ .overlay2 {
-        display: flex !important;
-    }
-    #klik-logo3:checked ~ .overlay3 {
-        display: flex !important;
-    }
-    #klik-logo4:checked ~ .overlay4 {
-        display: flex !important;
-    }
-
-    /* 5. Gaya Gambar Besar */
-    .gambar-besar,.gambar-besar2,.gambar-besar3,.gambar-besar4 {
-        max-width: 80%;
-        max-height: 80%;
-        border: 5px solid white;
-    }
-
-    /* 6. Tombol Silang (X) */
-    .tombol-tutup,.tombol-tutup2,.tombol-tutup3,.tombol-tutup4 {
-        position: absolute;
-        top: 20px;
-        right: 30px;
-        color: white;
-        font-size: 50px;
-        font-weight: bold;
-        text-decoration: none;
-        cursor: pointer;
-    }
+/* Efek saat kursor diarahkan ke tombol panah */
+.carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-control-next:hover .carousel-control-next-icon {
+    background-color: #facc15; /* Kuning cerah (yellow-400) */
+    border-color: #facc15;
+}
     </style>
     <script>
         tailwind.config = {
@@ -135,15 +76,15 @@ $query = mysqli_query($koneksi, "SELECT * FROM guru ORDER BY nama ASC");
 
     <!-- Header / Navbar -->
     <nav class="bg-white shadow-md fixed top-0 left-0 w-full z-50">
-        <div class="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
-            <div class="flex justify-between h-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
                 <div class="flex items-center">
-                    <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center text-yellow-900 font-bold mr-3">
-                        <img src="img/logo.jpeg" alt="Logo">
+                    <div class="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center text-yellow-900 font-bold mr-3">
+                        <img src="logo.jpeg" alt="Logo">
                     </div>
-                    <span class="font-bold text-2xl text-yellow-600">SDN LALADON 03 </span>
+                    <span class="font-bold text-xl text-yellow-600">SD Negeri Laladon 3 </span>
                 </div>
-                <div class="hidden md:flex items-center space-x-6">
+                <div class="hidden md:flex items-center space-x-8">
                     <a href="#home" class="text-gray-600 hover:text-yellow-600 font-medium transition">Beranda</a>
                     <a href="#about" class="text-gray-600 hover:text-yellow-600 font-medium transition">Profil</a>
                     <a href="#visimisi" class="text-gray-600 hover:text-yellow-600 font-medium transition">Visi & Misi</a>
@@ -156,68 +97,23 @@ $query = mysqli_query($koneksi, "SELECT * FROM guru ORDER BY nama ASC");
 
     <!-- Hero Section -->
     <div id="home" class="carousel slide" data-bs-ride="carousel" style="margin-top: 64px;">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#home" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#home" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#home" data-bs-slide-to="2"></button>
+    </div>
 
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <input type="checkbox" id="klik-logo" style="display: block;">
-            <label for="klik-logo" style="display: block; width: 100%; margin: 0; padding: 0; cursor: default;">
-                <img src="img/foto4.jpeg" alt="Slider 1" style="width: 100%; height: 500px; object-fit: cover; display: block;">
-            </label>
-            <div class="overlay">
-                <label for="klik-logo" class="tombol-tutup">&times;</label>
-                <img src="img/foto4.jpeg" 
-                    class="gambar-besar" 
-                    style="max-width: 90%; max-height: 90vh; object-fit: contain;" 
-                    alt="Slider 1">
-            </div>
+            <img src="img/foto1.jpeg" class="d-block w-100" style="object-fit: cover; height: 500px;" alt="Slider 1">
         </div>
         <div class="carousel-item">
-            <input type="checkbox" id="klik-logo2" style="display: block;">
-            <label for="klik-logo2" style="display: block; width: 100%; margin: 0; padding: 0; cursor: default;">
-                <img src="img/foto2.jpeg" 
-                    alt="Slider 2" 
-                    style="width: 100%; height: 500px; object-fit: cover; display: block;">
-            </label>
-            <div class="overlay2">
-                <label for="klik-logo2" class="tombol-tutup">&times;</label>
-                <img src="img/foto2.jpeg" 
-                    class="gambar-besar2" 
-                    style="max-width: 90%; max-height: 90vh; object-fit: contain;" 
-                    alt="Slider 2">
-            </div>
+            <img src="img/foto2.jpeg" class="d-block w-100" style="object-fit: cover; height: 500px;" alt="Slider 2">
         </div>
         <div class="carousel-item">
-            <input type="checkbox" id="klik-logo3" style="display: block;">
-            <label for="klik-logo3" style="display: block; width: 100%; margin: 0; padding: 0; cursor: default;">
-                <img src="img/foto3.jpeg" 
-                    alt="Slider 3" 
-                    style="width: 100%; height: 500px; object-fit: cover; display: block;">
-            </label>
-            <div class="overlay3">
-                <label for="klik-logo3" class="tombol-tutup">&times;</label>
-                <img src="img/foto3.jpeg" 
-                    class="gambar-besar3" 
-                    style="max-width: 90%; max-height: 90vh; object-fit: contain;" 
-                    alt="Slider 3">
-            </div>
-        </div>
-        <div class="carousel-item">
-            <input type="checkbox" id="klik-logo4" style="display: block;">
-            <label for="klik-logo4" style="display: block; width: 100%; margin: 0; padding: 0; cursor: default;">
-                <img src="img/foto1.jpeg" 
-                    alt="Slider 4" 
-                    style="width: 100%; height: 500px; object-fit: cover; display: block;">
-            </label>
-            <div class="overlay4">
-                <label for="klik-logo4" class="tombol-tutup">&times;</label>
-                <img src="img/foto1.jpeg" 
-                    class="gambar-besar4" 
-                    style="max-width: 90%; max-height: 90vh; object-fit: contain;" 
-                    alt="Slider 4">
-            </div>
+            <img src="img/foto3.jpeg" class="d-block w-100" style="object-fit: cover; height: 500px;" alt="Slider 3">
         </div>
     </div>
-    
 
     <button class="carousel-control-prev" type="button" data-bs-target="#home" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -225,7 +121,7 @@ $query = mysqli_query($koneksi, "SELECT * FROM guru ORDER BY nama ASC");
     </button>
     <button class="carousel-control-next" type="button" data-bs-target="#home" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden"></span>
+        <span class="visually-hidden">Next</span>
     </button>
 </div>
     <!-- Content Grid: About & Visi Misi -->
@@ -242,7 +138,7 @@ $query = mysqli_query($koneksi, "SELECT * FROM guru ORDER BY nama ASC");
                     SD Negeri Laladon 3 berdedikasi untuk memberikan pendidikan berkualitas tinggi dengan fasilitas modern dan tenaga pengajar profesional.
                 </p>
                 <div class="grid grid-cols-2 gap-4 mt-8">
-                    <img src="img/perpustakaan.png" alt="Library" class="rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                    <img src="perpustakaan.png" alt="Library" class="rounded-lg shadow-md hover:shadow-xl transition duration-300">
                 </div>
             </div>
 

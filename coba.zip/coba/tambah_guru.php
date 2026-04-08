@@ -18,16 +18,20 @@ if (!isset($_SESSION['status']) || $_SESSION['status'] != "login") {
         
         <form action="aksi_tambah.php" method="post">
             <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-bold mb-2" id="nama">Nama Lengkap</label>
-                <input type="text"  for="nama" name="nama" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                <label class="block text-gray-700 text-sm font-bold mb-2">Nama Lengkap</label>
+                <input type="text" name="nama" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
             </div>
             <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-bold mb-2" id="nip">NIP</label>
-                <input type="text"  for="nip" name="nip" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                <label class="block text-gray-700 text-sm font-bold mb-2">NIP</label>
+                <input type="text" name="nip" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
             </div>
             <div class="mb-4">
-                <label class="block text-gray-700 text-sm font-bold mb-2" id="mata_pelajaran">Mata Pelajaran</label>
-                <input type="text"  for="mata_pelajaran" name="mata_pelajaran" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+                <label class="block text-gray-700 text-sm font-bold mb-2">Mata Pelajaran</label>
+                <input type="text" name="mata_pelajaran" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+            </div>
+            <div class="mb-6">
+                <label class="block text-gray-700 text-sm font-bold mb-2">No HP</label>
+                <input type="text" name="no_hp" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
             </div>
             <div class="flex items-center justify-between">
                 <a href="admin.php" class="text-gray-500 hover:text-gray-800 font-bold">Kembali</a>

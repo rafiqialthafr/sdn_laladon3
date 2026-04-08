@@ -177,7 +177,7 @@
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
-                <h1 class="">Tambah Data Siswa SMKN 1 Ciomas</h1>
+                <h1 class="">Edit Data Siswa SMKN 1 Ciomas</h1>
 
                 <form action="">
                     <label for="nama" class="form-label">Nama Siswa</label>

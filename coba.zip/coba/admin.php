@@ -70,6 +70,7 @@ $query = mysqli_query($koneksi, "SELECT * FROM guru ORDER BY id DESC");
                                     <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">No</th>
                                     <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Nama / NIP</th>
                                     <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Mapel</th>
+                                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">No HP</th>
                                     <th class="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase">Aksi</th>
                                 </tr>
                             </thead>
